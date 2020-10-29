@@ -28,4 +28,4 @@ jobs:
         repo: austin0/quick-labs
         token: ${{ secrets.API_TOKEN }}
         inputs: '{ "branch": "${{ github.ref }}", "guide_name": "${{ github.event.repository.name }}" }'
-        ref: ${{ github.ref }}
+        ref: ${{ github.head_ref }}
