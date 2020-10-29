@@ -26,4 +26,4 @@ jobs:
         workflow: Message
         repo: austin0/quick-labs
         token: ${{ secrets.API_TOKEN }}
-        inputs: '{ "message": "blah blah", "debug": true }'
+        inputs: '{ "message": "blah blah", "debug": "true" }'
