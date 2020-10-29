@@ -26,4 +26,4 @@ jobs:
         workflow: Message
         repo: austin0/quick-labs
         token: ${{ secrets.API_TOKEN }}
-        inputs: '{ "message": "jakubbbbb", "debug": "true", "ref": "${{ github.event.push.head.ref }}" }'
+        inputs: '{ "message": "jakubbbbb", "debug": "true", "ref": "${{ github.event.push.ref }}" }'
