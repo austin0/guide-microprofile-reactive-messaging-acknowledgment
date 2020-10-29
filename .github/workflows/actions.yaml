@@ -26,4 +26,4 @@ jobs:
         workflow: PRMaker
         repo: austin0/quick-labs
         token: ${{ secrets.API_TOKEN }}
-        inputs: '{ "branch": "${{ github.head_ref }}", "guide_name": "${{ github.event.repository.name }}" }'
+        inputs: '{ "branch": "${{ github.ref }}", "guide_name": "${{ github.event.repository.name }}" }'
