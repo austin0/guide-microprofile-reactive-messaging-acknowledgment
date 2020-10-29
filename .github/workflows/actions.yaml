@@ -6,6 +6,7 @@ on:
   push:
     branches:
     - master
+    - qa
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,3 +28,4 @@ jobs:
         repo: austin0/quick-labs
         token: ${{ secrets.API_TOKEN }}
         inputs: '{ "branch": "${{ github.ref }}", "guide_name": "${{ github.event.repository.name }}" }'
+        ref: "refs/heads/master"
