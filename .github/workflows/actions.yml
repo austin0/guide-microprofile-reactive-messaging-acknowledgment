@@ -20,6 +20,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     # Uses the secrets from the organisation for credentials
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '1'
 
     - name: Invoke workflow in another repo with inputs
       uses: benc-uk/workflow-dispatch@v1
