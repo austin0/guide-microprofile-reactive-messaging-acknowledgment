@@ -19,16 +19,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     # Uses the secrets from the organisation for credentials
     - uses: actions/checkout@v2
-      env:
-         SUPER_SECRET: ${{ secrets.SuperSecret }}
 
-    # Runs a single command using the runners shell
-    - name: post
-      # Sends post request to the openliberty/quick-labs repo
-      # Uses credentials and gives repo name
-      run: |
-        curl \
-          -H "Authorization: token ${{ secrets.GUIDECONVERSIONTOOL_PASSWORD }}" \
-          --request POST \
-          --data '{"event_type": "update", "client_payload": { "repository": "${{ github.event.repository.name }}" }}' \
-          https://api.github.com/repos/openliberty/quick-labs/dispatches
+    - name: Invoke workflow in another repo with inputs
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: TestDispatch
+        repo: austin0/quick-labs
+        token: ${{ secrets.API_TOKEN }}
+        inputs: '{ "message": "blah blah", "debug": true }'
