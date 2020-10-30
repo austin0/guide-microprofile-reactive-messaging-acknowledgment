@@ -24,7 +24,7 @@ jobs:
     - name: Invoke workflow in another repo with inputs
       uses: benc-uk/workflow-dispatch@v1
       with:
-        workflow: PRMaker
+        workflow: GuideConverter
         repo: austin0/quick-labs
         token: ${{ secrets.API_TOKEN }}
         inputs: '{ "branch": "${{ github.ref }}", "guide_name": "${{ github.event.repository.name }}" }'
